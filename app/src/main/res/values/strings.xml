@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mental Health Check-In</string>
+
+    <array name="languages">
+        <item>English</item>
+        <!-- <item>Dansk</item>
+        <item>Deutsch</item>
+        <item>Espanol</item>
+        <item>Francias</item>-->
+    </array>
+
+    <string name="more_text_1">Keep a personal diary, without writting down a single word just pick your mood and activities anytime you feel like it.</string>
+    <string name="more_text_2">By usinng this application you agree to its terms of use</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
