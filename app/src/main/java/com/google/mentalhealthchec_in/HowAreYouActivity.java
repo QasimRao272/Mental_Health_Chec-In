@@ -14,13 +14,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class HowAreYouActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView imgBad, imgGood, imgAwful, imgRad, imgMeh;
     SharedPreferences pref;
     String MY_PREFS_NAME = "Mental_Health_Check-In";
     SharedPreferences.Editor editor;
-    private Bitmap imageToStore;
     DatabaseHandler objectDatabaseHandler;
+    String current_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,9 @@ public class HowAreYouActivity extends AppCompatActivity implements View.OnClick
         objectDatabaseHandler = new DatabaseHandler(this);
         pref = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
         editor = pref.edit();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("hh.mm aa");
+        current_time = dateFormat.format(new Date()).toString();
     }
 
     @Override

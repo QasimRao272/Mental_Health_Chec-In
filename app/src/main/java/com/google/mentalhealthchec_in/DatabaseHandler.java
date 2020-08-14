@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
-
     Context context;
     private static String DATABASE_NAME = "mydb.db";
     private static int DATABASE_VERSION = 1;
@@ -60,6 +59,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
             long checkIfQueryRuns = objectSqLiteDatabase.insert("imageInfo", null, objectContentValues);
             if (checkIfQueryRuns != 0) {
+
+                Toast.makeText(context, "" + checkIfQueryRuns, Toast.LENGTH_SHORT).show();
+
                 Toast.makeText(context, "Data Added Into Table", Toast.LENGTH_SHORT).show();
                 Log.d("TAG", "onCreate: Data Added");
                 objectSqLiteDatabase.close();
@@ -72,7 +74,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
 
     public ArrayList<ModelClass> getAllImagesData() {
 
