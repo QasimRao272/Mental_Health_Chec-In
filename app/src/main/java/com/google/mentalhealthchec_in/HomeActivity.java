@@ -2,6 +2,8 @@ package com.google.mentalhealthchec_in;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.mentalhealthchec_in.Fragments.FragmentCalender;
@@ -25,11 +28,23 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     TextView txt_calender;
     private LinearLayout tvEntries, tvCalender, tvMore, tvStats;
     FloatingActionButton fab_plus;
+   /* ////////////////////////
+    RecyclerView objectRecyclerview;
+    DatabaseHandler objectDatabaseHandler;
+    RVAdapter objectRvAdapter;
+    TextView noviews;
+    /////////////////////////*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+       /* ////////////////
+        objectRecyclerview = findViewById(R.id.imageRV);
+        noviews = findViewById(R.id.noviews);
+        objectDatabaseHandler = new DatabaseHandler(this);
+        showEmptyviews();
+        ////////////////*/
 
         FragmentEntries frag_name = new FragmentEntries();
         FragmentManager manager = this.getSupportFragmentManager();
@@ -95,4 +110,30 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
+   /* private void showEmptyviews() {
+        if (objectDatabaseHandler.getAllImagesData().isEmpty()) {
+            noviews.setVisibility(View.VISIBLE);
+        } else {
+            objectDatabaseHandler.getAllImagesData();
+            noviews.setVisibility(View.GONE);
+        }
+    }
+
+    public void getData() {
+        try {
+            objectRvAdapter = new RVAdapter(objectDatabaseHandler.getAllImagesData());
+            objectRecyclerview.setHasFixedSize(true);
+            objectRecyclerview.setLayoutManager(new LinearLayoutManager(this));
+            objectRecyclerview.setAdapter(objectRvAdapter);
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getData();
+    }*/
 }

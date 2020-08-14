@@ -386,6 +386,7 @@ public class CustomizedActivity extends AppCompatActivity {
         String val = prefs.getString("All_Screens_Done", "No name defined");
         if (val.equals("Yes")) {
             startActivity(new Intent(getApplicationContext(), HowAreYouActivity.class));
+            finish();
         }
     }
 
